@@ -1,0 +1,12 @@
+.banner{
+    background-image: url('https://www.sparkadmissions.com/wp-content/uploads/2016/11/sports.jpg');
+}
+.button{
+    background-color: white;
+    color: blue;
+    border:1px solid blue;
+}
+.button :hover{
+    background-color: blue;
+    color: white;
+}
