@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const {createUser}=useContext(AuthContext);
@@ -30,7 +31,7 @@ const Register = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-3xl text-center font-bold">Login</h1>
+                        <h1 className="text-3xl text-center font-bold">Register</h1>
                         <form onSubmit={handleRegister}>
                             <div className="form-control">
                                 <label className="label">
@@ -66,6 +67,7 @@ const Register = () => {
                         </form>
                         <p className='my-4 text-center'>Already have an account? <Link className='text-orange-600 font-bold' to='/login'>Login</Link></p>
                         {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
