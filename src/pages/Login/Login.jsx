@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const {signIn}=useContext(AuthContext);
+    const handleLogin=(e)=>{
+        e.preventDefault();
+        const email=e.target.email.value;
+        const password=e.target.password.value
+        console.log(email,password);
+        signIn(email,password)
+        .then(result=>{
+            const loggedUser=result.user;
+            console.log(loggedUser);
+            //navigate(from,{replace:true})
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
+    }
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row">
@@ -11,7 +29,7 @@ const Login = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <h1 className="text-3xl text-center font-bold">Login</h1>
-                        <form >
+                        <form onSubmit={handleLogin}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
