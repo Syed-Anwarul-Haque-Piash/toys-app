@@ -3,9 +3,22 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToy = () => {
-    const {user}=useContext(AuthContext);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { user } = useContext(AuthContext);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        fetch('http://localhost:5000/addtoy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        console.log(data)
+    };
     return (
 
 
@@ -35,11 +48,11 @@ const AddToy = () => {
                     <div className="form-control">
                         {/* <input type="text" {...register("price")} placeholder="Price" name="price" className="input input-bordered" /> */}
                         <input
-                    className="input input-bordered"
-                    {...register("price", { required: true })}
-                    placeholder="Price"
-                    type="number"
-                />
+                            className="input input-bordered"
+                            {...register("price", { required: true })}
+                            placeholder="Price"
+                            type="number"
+                        />
                     </div>
                     <div className="form-control">
                         <select className="input input-bordered" {...register("category")}>
@@ -54,12 +67,12 @@ const AddToy = () => {
                     <div className="form-control">
                         {/* <input type="text" {...register("image")} placeholder="Image" name="image" className="input input-bordered" /> */}
                         <input
-                    className="input input-bordered"
-                    {...register("image")}
-                    placeholder="Image Link"
-                    type="url"
-                    defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
-                />
+                            className="input input-bordered"
+                            {...register("image")}
+                            placeholder="Image Link"
+                            type="url"
+                            defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        />
                     </div>
                     <div className="form-control">
                         <input
@@ -72,13 +85,13 @@ const AddToy = () => {
                     <div className="form-control">
                         {/* <input type="text-input" {...register("email")} placeholder="Email" type="email" className="input input-bordered" /> */}
                         <input
-                    className="input input-bordered"
-                       value={user?.email}
-                    {...register("postedBy")}
-                    placeholder="your email"
-                    type="email"
-                />
-            
+                            className="input input-bordered"
+                            value={user?.email}
+                            {...register("postedBy")}
+                            placeholder="your email"
+                            type="email"
+                        />
+
                     </div>
                     <div className="form-control">
                         <input
