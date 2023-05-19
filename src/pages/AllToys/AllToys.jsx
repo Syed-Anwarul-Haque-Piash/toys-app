@@ -28,8 +28,8 @@ const AllToys = () => {
                         <td>{toy?.category}</td>
                         <td>{toy?.price}</td>
                         <td>{toy?.quantity}</td>
-                        <td>
-                        <Link to={`singleToy/${toy._id}`}>
+                        <td>{console.log(toy._id)}
+                        <Link to={`/singleToy/${toy._id}`}>
                         <button className="button">View Details</button>
                     </Link>
                         </td>
