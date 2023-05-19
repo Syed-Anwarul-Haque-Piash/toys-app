@@ -19,6 +19,7 @@ const NavigationBar = () => {
         {user?.email ? <>
             <li><Link to="/addToy">Add A Toy</Link></li>
             <li><Link to="/allToy">All Toys</Link></li>
+            <li><Link to="/myToy">My Toys</Link></li>
             <li><button onClick={handleLogOut}>Log out</button></li>
         </>
             : <li> <Link to="/login">Login</Link> </li>
