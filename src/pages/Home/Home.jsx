@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import Toys from '../Toys/Toys';
 import Gallery from '../../Gallery/Gallery';
+import Free from '../../Free/Free';
+import Delivery from '../../Delivery/Delivery';
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
     </div>
     <Gallery></Gallery>
     <Toys></Toys>
+    <Free></Free>
+    <Delivery></Delivery>
     </div>
   );
 };

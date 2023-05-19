@@ -54,10 +54,10 @@ const MyToys = () => {
                         <td>{toy?.price}</td>
                         <td>{toy?.quantity}</td>
                         <td>
-                        {/* <Link to={`/updatetoys/${toy?._id}`}>
+                        <Link to={`/updatetoys/${toy?._id}`}>
                         
-                          <button className="btn btn-info">Update</button></Link> */}
-                          <button className="btn btn-info">Update</button>
+                          <button className="btn btn-info">Update</button></Link>
+                          {/* <button className="btn btn-info">Update</button> */}
                         </td>
                         <td>
                         <button onClick={()=>handleDelete(toy?._id)} className="btn btn-error">Delete</button>

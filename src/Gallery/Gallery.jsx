@@ -3,7 +3,7 @@ import React from 'react';
 const Gallery = () => {
     return (
         <div>
-            <h1 className='text-center font-bold text-6xl'>Our Galary</h1>
+            <h1 className='text-center font-bold text-6xl mt-4 mb-4'>Our Gallery</h1>
             <div className="avatar grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-2">
                 <div className="w-96 mask mask-hexagon">
                     <img src="https://media.istockphoto.com/id/1162019476/photo/boy-and-dog-in-toy-racing-car.jpg?s=612x612&w=0&k=20&c=q4VZNxBRnpl9gHv3om30YhAKGOyKmTzPV0eSoHGCfGo="/>

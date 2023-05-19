@@ -108,7 +108,7 @@ const AddToy = () => {
                     />
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary  mx-auto" value="Add a Toy" type="submit" />
+                    <input className="button  mx-auto" value="Add a Toy" type="submit" />
                 </div>
             </form>
         </div>
