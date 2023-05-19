@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { key } from 'localforage';
+import { Link } from 'react-router-dom';
+//import { key } from 'localforage';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -53,7 +54,10 @@ const MyToys = () => {
                         <td>{toy?.price}</td>
                         <td>{toy?.quantity}</td>
                         <td>
-                        <button className="btn btn-info">Update</button>
+                        {/* <Link to={`/updatetoys/${toy?._id}`}>
+                        
+                          <button className="btn btn-info">Update</button></Link> */}
+                          <button className="btn btn-info">Update</button>
                         </td>
                         <td>
                         <button onClick={()=>handleDelete(toy?._id)} className="btn btn-error">Delete</button>

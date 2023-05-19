@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const AllToys = () => {
     const allToys = useLoaderData();
-    console.log(allToys)
+    console.log(allToys);
    
     //const {postedBy,toyname,category,price,quantity}=allToys;
     return (
@@ -29,7 +29,7 @@ const AllToys = () => {
                         <td>{toy?.price}</td>
                         <td>{toy?.quantity}</td>
                         <td>
-                        <Link to={`singleToy/${toy?._id}`}>
+                        <Link to={`singleToy/${toy._id}`}>
                         <button className="button">View Details</button>
                     </Link>
                         </td>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Toys from '../Toys/Toys';
+import Gallery from '../../Gallery/Gallery';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    <Gallery></Gallery>
     <Toys></Toys>
     </div>
   );
