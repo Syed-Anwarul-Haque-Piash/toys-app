@@ -22,7 +22,7 @@ const AllToys = () => {
                 </thead>
                 <tbody>
                     {allToys.map(toy =>
-                        <tr>
+                        <tr key={toy?._id}>
                             <th>{toy?.sellername}</th>
                             <td>{toy?.toyname}</td>
                             <td>{toy?.category}</td>

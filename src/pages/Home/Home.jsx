@@ -8,7 +8,7 @@ import Delivery from '../../Delivery/Delivery';
 const Home = () => {
   return (
     <div>
-      <div className="hero min-h-screen" style={{ backgroundImage: `url('https://www.sparkadmissions.com/wp-content/uploads/2016/11/sports.jpg')` }}>
+      <div className="hero min-h-screen" style={{ backgroundImage: `url('https://ae01.alicdn.com/kf/Hdd275601868a4310be25a8586b5e8cf0B/Turbo-Racing-Mini-RC-Car-Without-Transmitter-1-76-2-4G-Fully-Proportional-LED-Light-Vehicles.jpg')` }}>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">

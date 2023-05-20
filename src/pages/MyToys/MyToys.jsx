@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 
 const MyToys = () => {
@@ -41,13 +42,13 @@ const MyToys = () => {
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Action</th>
-                        <th>Action</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     {toys.map(toy=>
                         
-                        <tr>
+                        <tr key={toy?._id}>
                         
                         <th>{toy?.postedBy}</th>
                         <td>{toy?.toyname}</td>
@@ -57,11 +58,11 @@ const MyToys = () => {
                         <td>
                         <Link to={`/updatetoys/${toy?._id}`}>
                         
-                          <button className="btn btn-info">Update</button></Link>
+                          <button className="btn btn-info me-2"><FaEdit></FaEdit></button></Link>
                           {/* <button className="btn btn-info">Update</button> */}
-                        </td>
-                        <td>
-                        <button onClick={()=>handleDelete(toy?._id)} className="btn btn-error">Delete</button>
+                        
+                        
+                        <button onClick={()=>handleDelete(toy?._id)} className="btn btn-error"><FaTrash></FaTrash></button>
                         </td>
                     </tr>)}
                 </tbody>
