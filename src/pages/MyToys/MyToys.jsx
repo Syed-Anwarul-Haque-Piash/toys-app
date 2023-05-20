@@ -11,7 +11,7 @@ const MyToys = () => {
     useTitle('My Toys');
     const [toys, setToys] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://toy-market-server-sepia.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user])
@@ -30,7 +30,7 @@ const MyToys = () => {
           }).then((result) => {
             if (result.isConfirmed) {
               
-              fetch(`http://localhost:5000/mytoys/${id}`,{
+              fetch(`https://toy-market-server-sepia.vercel.app/mytoys/${id}`,{
                 method:"DELETE"
               })
               .then(res=>res.json())

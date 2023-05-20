@@ -12,7 +12,7 @@ const UpdateToys = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:5000/alltoys/${_id}`, {
+        fetch(`https://toy-market-server-sepia.vercel.app/alltoys/${_id}`, {
             method: "PUT",
             headers: {
                 "content-Type": "application/json",

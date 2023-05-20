@@ -9,7 +9,7 @@ const AllToys = () => {
     const [searchValue,setSearchvalue]=useState('');
     const [allData,setAllData]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://toy-market-server-sepia.vercel.app/alltoys')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
@@ -17,7 +17,7 @@ const AllToys = () => {
         })
     },[])
     const handleSearch=()=>{
-       fetch(`http://localhost:5000/search/${searchValue}`)
+       fetch(`https://toy-market-server-sepia.vercel.app/search/${searchValue}`)
        .then(res=>res.json())
        .then(data=>{
         setAllData(data)

@@ -9,7 +9,7 @@ const AddToy = () => {
     useTitle("Add Toy")
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/addtoy', {
+        fetch('https://toy-market-server-sepia.vercel.app/addtoy', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

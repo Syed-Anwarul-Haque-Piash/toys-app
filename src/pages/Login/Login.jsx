@@ -12,6 +12,8 @@ const Login = () => {
     const auth=getAuth(app);
     const provider=new GoogleAuthProvider()
     const navigate = useNavigate();
+    // const [error,setError]=useState("")
+    // const [success,setSuccess] = useState("")
     const location = useLocation();
     useTitle('Login');
     console.log("login page location", location);
@@ -19,8 +21,12 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
-        const password = e.target.password.value
+        const password = e.target.password.value;
         console.log(email, password);
+        // setError("");
+        // setSuccess("");
+        // setSuccess("Login successful")
+        // setError("Password not correct");
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
@@ -72,6 +78,8 @@ const Login = () => {
                                 <input className="bg-sky-900 text-white h-10" type="submit" value="Login" />
                             </div>
                         </form>
+                        {/* <p className='text-red-600'>{error}</p>
+                        <p className='text-emerald-600	'>{success}</p> */}
                         <p className='my-4 text-center'>New to Legend <Link className='text-orange-600 font-bold' to='/signup'>Sign Up</Link></p>
                        
                         <button onClick={handleGoogleSignIn} className="btn btn-circle bg-sky-900 mx-auto">

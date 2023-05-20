@@ -36,12 +36,12 @@ const router = createBrowserRouter([
             {
                 path: "/allToy",
                 element: <AllToys></AllToys>,
-                //loader: ()=>fetch('http://localhost:5000/alltoys')
+                //loader: ()=>fetch('https://toy-market-server-sepia.vercel.app/alltoys')
             },
             {
                 path: 'singleToy/:id',
                 element: <PrivateRoutes><SingleToy></SingleToy></PrivateRoutes>,
-                loader: ({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
+                loader: ({params})=>fetch(`https://toy-market-server-sepia.vercel.app/alltoys/${params.id}`)
             },
             {
                 path: '/myToy',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path:"updatetoys/:id",
                 element: <UpdateToys></UpdateToys>,
-                loader:({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
+                loader:({params})=>fetch(`https://toy-market-server-sepia.vercel.app/alltoys/${params.id}`)
             },
             {
                 path: "/blog",

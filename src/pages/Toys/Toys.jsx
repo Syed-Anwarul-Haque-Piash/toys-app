@@ -5,7 +5,7 @@ const Toys = () => {
     const [toys,setToys]=useState([]);
     const [active,setActive]=useState("Sports Car");
     useEffect(()=>{
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://toy-market-server-sepia.vercel.app/alltoys')
         .then(res=>res.json())
         .then(data=>setToys(data))
     },[])

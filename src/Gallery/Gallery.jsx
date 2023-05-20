@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
+    useEffect(()=>{
+        AOS.init();
+    },[])
     return (
         <div>
             <h1 className='text-center font-bold text-6xl mt-4 mb-4'>Our Gallery</h1>
-            <div className="avatar grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-2">
+            <div data-aos="zoom-in" data-aos-delay="300" className="avatar grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-2">
                 <div className="w-96 mask mask-hexagon">
                     <img src="https://media.istockphoto.com/id/1162019476/photo/boy-and-dog-in-toy-racing-car.jpg?s=612x612&w=0&k=20&c=q4VZNxBRnpl9gHv3om30YhAKGOyKmTzPV0eSoHGCfGo="/>
                 </div>
