@@ -8,7 +8,7 @@ const NavigationBar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                //localStorage.removeItem('car-access-token');
+                
             })
             .catch(error => console.log(error))
     }
@@ -22,7 +22,10 @@ const NavigationBar = () => {
             <li><Link to="/myToy">My Toys</Link></li>
             <li><button onClick={handleLogOut}>Log out</button></li>
         </>
-            : <li> <Link to="/login">Login</Link> </li>
+            : <>
+            <li><Link to="/allToy">All Toys</Link></li>
+            <li> <Link to="/login">Login</Link> </li></> 
+
         }
 
     </>

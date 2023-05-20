@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
-//import { key } from 'localforage';
+
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -11,6 +11,7 @@ const MyToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [user])
+    
     const handleDelete=(id)=>{
         //console.log("deleted")
         const proceed=confirm("Are you sure you want to delete");

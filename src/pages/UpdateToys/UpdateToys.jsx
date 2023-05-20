@@ -23,6 +23,7 @@ const UpdateToys = () => {
             .then(data => {
                 console.log(data)
             })
+            //console.log(data);
 
     };
     return (
