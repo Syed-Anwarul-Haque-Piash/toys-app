@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -8,7 +9,7 @@ const NavigationBar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                
+
             })
             .catch(error => console.log(error))
     }
@@ -23,8 +24,8 @@ const NavigationBar = () => {
             <li><button onClick={handleLogOut}>Log out</button></li>
         </>
             : <>
-            <li><Link to="/allToy">All Toys</Link></li>
-            <li> <Link to="/login">Login</Link> </li></> 
+                <li><Link to="/allToy">All Toys</Link></li>
+                <li> <Link to="/login">Login</Link> </li></>
 
         }
 
@@ -54,8 +55,11 @@ const NavigationBar = () => {
                 {/* <Link to='/login'>
                     <button style={{ backgroundColor: "white", color: "blue", border: "blue", width: "80px", height: "40px", borderRadius: "10px" }}>Login</button>
                 </Link> */}
-                {
+                {/* {
                     user?.photoURL ? <img style={{ width: '50px', marginRight: "15px", borderRadius: '50%' }} src={user.photoURL} alt="" /> : <></>
+                } */}
+                {
+                    user?.photoURL ? <img style={{ width: '50px', marginRight: "15px", borderRadius: '50%' }} src={user.photoURL} alt="" /> : <FaUserCircle style={{ fontSize: '30px' }}></FaUserCircle>
                 }
             </div>
         </div>

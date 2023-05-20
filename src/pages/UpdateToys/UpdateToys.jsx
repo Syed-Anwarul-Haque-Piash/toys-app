@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToys = () => {
     const update = useLoaderData();
@@ -22,6 +23,14 @@ const UpdateToys = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if(data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             })
             //console.log(data);
 
@@ -37,7 +46,7 @@ const UpdateToys = () => {
                             className="input input-bordered"
                             {...register("toyname")}
                             placeholder="Toy Name"
-                        //   defaultValue="Web developer"
+                          defaultValue={update?.toyname}
                         />
                     </div>
 
@@ -47,7 +56,7 @@ const UpdateToys = () => {
                             className="input input-bordered"
                             {...register("sellername", { required: true })}
                             placeholder="Seller Name"
-                        // defaultValue="30k"
+                          defaultValue={update?.sellername}
                         />
                     </div>
                     <div className="form-control">
@@ -57,6 +66,7 @@ const UpdateToys = () => {
                             {...register("price", { required: true })}
                             placeholder="Price"
                             type="number"
+                            defaultValue={update?.price}
                         />
                     </div>
                     <div className="form-control">
@@ -76,7 +86,7 @@ const UpdateToys = () => {
                             {...register("image")}
                             placeholder="Image Link"
                             type="url"
-                            defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            defaultValue={update?.image}
                         />
                     </div>
                     <div className="form-control">
