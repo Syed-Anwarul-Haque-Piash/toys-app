@@ -95,6 +95,7 @@ const UpdateToys = () => {
                             {...register("rating")}
                             placeholder="Rating"
                             type="text"
+                            defaultValue={update?.rating}
                         />
                     </div>
                     <div className="form-control">
@@ -114,12 +115,14 @@ const UpdateToys = () => {
                             {...register("quantity")}
                             placeholder="Quantity"
                             type="text"
+                            defaultValue={update?.quantity}
                         />
                     </div>
                     <input
                         className="input input-bordered"
                         {...register("description")}
                         placeholder="description"
+                        defaultValue={update?.description}
                     />
                 </div>
                 <div className="form-control mt-6">
