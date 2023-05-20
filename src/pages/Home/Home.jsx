@@ -4,8 +4,10 @@ import Toys from '../Toys/Toys';
 import Gallery from '../../Gallery/Gallery';
 import Free from '../../Free/Free';
 import Delivery from '../../Delivery/Delivery';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+  useTitle('Home');
   return (
     <div>
       <div className="hero min-h-screen" style={{ backgroundImage: `url('https://ae01.alicdn.com/kf/Hdd275601868a4310be25a8586b5e8cf0B/Turbo-Racing-Mini-RC-Car-Without-Transmitter-1-76-2-4G-Fully-Proportional-LED-Light-Vehicles.jpg')` }}>

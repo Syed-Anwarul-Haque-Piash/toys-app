@@ -3,10 +3,12 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
+    useTitle('My Toys');
     const [toys, setToys] = useState([])
     useEffect(() => {
         fetch(`http://localhost:5000/mytoys/${user?.email}`)
@@ -14,28 +16,7 @@ const MyToys = () => {
             .then(data => setToys(data))
     }, [user])
     
-    // const handleDelete=(id)=>{
-    //     //console.log("deleted")
-    //     const proceed=confirm("Are you sure you want to delete");
-    //     if(proceed){
-    //         fetch(`http://localhost:5000/mytoys/${id}`,{
-    //         method:"DELETE"
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         console.log(data)
-    //         if(data.deletedCount>0){
-    //             Swal.fire(
-    //                 'Deleted!',
-    //                 'Your file has been deleted.',
-    //                 'success'
-    //               )
-    //             const remaining=toys.filter(toy=>toy?._id !== id);
-    //             setToys(remaining);
-    //         }
-    //     })
-    //     }
-    // }
+    
     const handleDelete=(id) => {
         console.log(id);
         Swal.fire({
@@ -90,7 +71,7 @@ const MyToys = () => {
                         <th>{toy?.postedBy}</th>
                         <td>{toy?.toyname}</td>
                         <td>{toy?.category}</td>
-                        <td>{toy?.price}</td>
+                        <td>${toy?.price}</td>
                         <td>{toy?.quantity}</td>
                         <td>
                         <Link to={`/updatetoys/${toy?._id}`}>
