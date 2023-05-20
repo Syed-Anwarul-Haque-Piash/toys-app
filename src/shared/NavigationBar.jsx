@@ -15,7 +15,7 @@ const NavigationBar = () => {
     }
     const navItems = <>
         <li><Link to="/">Home</Link> </li>
-        <li> <Link to="/about">About</Link> </li>
+        <li> <Link to="/blog">Blog</Link> </li>
         {/* <li> <Link to="/login">Login</Link> </li> */}
         {user?.email ? <>
             <li><Link to="/addToy">Add A Toy</Link></li>
