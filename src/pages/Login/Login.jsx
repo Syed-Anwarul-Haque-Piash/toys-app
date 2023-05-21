@@ -12,8 +12,7 @@ const Login = () => {
     const auth=getAuth(app);
     const provider=new GoogleAuthProvider()
     const navigate = useNavigate();
-    // const [error,setError]=useState("")
-    // const [success,setSuccess] = useState("")
+  
     const location = useLocation();
     useTitle('Login');
     console.log("login page location", location);
@@ -23,10 +22,7 @@ const Login = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
-        // setError("");
-        // setSuccess("");
-        // setSuccess("Login successful")
-        // setError("Password not correct");
+        
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
