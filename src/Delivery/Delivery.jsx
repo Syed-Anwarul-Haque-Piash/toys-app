@@ -2,7 +2,7 @@ import React from 'react';
 
 const Delivery = () => {
     return (
-        <div className='bg-green-500 grid grid-cols-1 grid-cols-4 mt-4'>
+        <div className='bg-green-500 grid md:grid-cols-2 lg:grid-cols-4 mt-4'>
             <div className='m-6 p-6 text-white'>
                 <h1 className='text-4xl font-bold hover:text-sky-700'>Fast Delivery</h1>
                 <p className='font-bold mt-2'>Find tracking information and order details from Your Orders.</p>
